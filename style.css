@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #434343, #000000);
+    animation: gradient 15s ease infinite;
+    
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#container {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+#input {
+    height: 100px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 36px;
+    text-align: right;
+    margin-bottom: 20px;
+    color: #ffffff;
+    background: transparent;
+    padding: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+#input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+button {
+    padding: 18px;
+    border-radius: 12px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+button:hover {
+    background: #ffffff1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0px) scale(0.95);
+}
+
+.operator {
+    color: #00ff95;
+    font-weight: 600;
+    background: #00ff951a;
+}
+
+.operator:hover {
+    background: #00ff9533;
+}
+
+.operator.ac {
+    color: #ff4757;
+    background: #ff47571a;
+}
+
+.operator.ac:hover {
+    background: #ff475733;
+}
+
+.operator.del {
+    color: #ffa502;
+    background: #ffa5021a;
+}
+
+.operator.del:hover {
+    background: #ffa50233;
+}
+
+.equalBtn {
+    background: linear-gradient(135deg, #00ff95 0%, #00b8ff 100%);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.equalBtn:hover {
+    background: linear-gradient(135deg, #00ff95 20%, #00b8ff 80%);
+    box-shadow: 0 4px 20px #00ff954d;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 #00ff9566;
+    }
+    70% {
+        box-shadow: 0 0 0 10px #00ff9500;
+    }
+    100% {
+        box-shadow: 0 0 0 0 #00ff9500;
+    }
+}
+
+.equalBtn {
+    animation: pulse 2s infinite;
+}
